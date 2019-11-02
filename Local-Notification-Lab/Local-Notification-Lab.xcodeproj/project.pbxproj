@@ -15,6 +15,8 @@
 		DFDEF344236CC31100EF1C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFDEF343236CC31100EF1C59 /* Assets.xcassets */; };
 		DFDEF347236CC31100EF1C59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFDEF345236CC31100EF1C59 /* LaunchScreen.storyboard */; };
 		DFDEF352236CC31100EF1C59 /* Local_Notification_LabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDEF351236CC31100EF1C59 /* Local_Notification_LabTests.swift */; };
+		DFDEF35D236D0DE300EF1C59 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDEF35C236D0DE300EF1C59 /* TimerViewController.swift */; };
+		DFDEF35E236D0DE300EF1C59 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDEF35C236D0DE300EF1C59 /* TimerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,7 @@
 		DFDEF34D236CC31100EF1C59 /* Local-Notification-LabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Local-Notification-LabTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDEF351236CC31100EF1C59 /* Local_Notification_LabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Local_Notification_LabTests.swift; sourceTree = "<group>"; };
 		DFDEF353236CC31100EF1C59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFDEF35C236D0DE300EF1C59 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +86,7 @@
 			children = (
 				DFDEF337236CC30F00EF1C59 /* AppDelegate.swift */,
 				DFDEF339236CC30F00EF1C59 /* SceneDelegate.swift */,
-				DFDEF33B236CC30F00EF1C59 /* ViewController.swift */,
+				DFDEF35F236D0E0C00EF1C59 /* Controllers */,
 				DFDEF33D236CC30F00EF1C59 /* Main.storyboard */,
 				DFDEF343236CC31100EF1C59 /* Assets.xcassets */,
 				DFDEF345236CC31100EF1C59 /* LaunchScreen.storyboard */,
@@ -100,6 +103,15 @@
 				DFDEF353236CC31100EF1C59 /* Info.plist */,
 			);
 			path = "Local-Notification-LabTests";
+			sourceTree = "<group>";
+		};
+		DFDEF35F236D0E0C00EF1C59 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DFDEF33B236CC30F00EF1C59 /* ViewController.swift */,
+				DFDEF35C236D0DE300EF1C59 /* TimerViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFDEF33C236CC30F00EF1C59 /* ViewController.swift in Sources */,
+				DFDEF35D236D0DE300EF1C59 /* TimerViewController.swift in Sources */,
 				DFDEF338236CC30F00EF1C59 /* AppDelegate.swift in Sources */,
 				DFDEF342236CC30F00EF1C59 /* Local_Notification_Lab.xcdatamodeld in Sources */,
 				DFDEF33A236CC30F00EF1C59 /* SceneDelegate.swift in Sources */,
@@ -214,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFDEF35E236D0DE300EF1C59 /* TimerViewController.swift in Sources */,
 				DFDEF352236CC31100EF1C59 /* Local_Notification_LabTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
