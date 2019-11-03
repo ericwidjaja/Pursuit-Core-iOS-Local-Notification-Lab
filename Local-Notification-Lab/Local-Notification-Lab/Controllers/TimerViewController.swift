@@ -36,34 +36,64 @@ class TimerViewController: UIViewController {
         //Create Button
         let startButton = UIButton()
         //set Button Properties
-        startButton.frame = CGRect(x: 177, y: 500, width: 60, height: 60)
         startButton.backgroundColor = #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)
-        startButton.layer.cornerRadius = 15
-        startButton.layer.borderWidth = 2
+        startButton.layer.cornerRadius = 18
+        startButton.layer.borderWidth = 4
         startButton.layer.borderColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         
         return startButton
     }()
     
+    lazy var timerTitleTextField: UITextField = {
+        let textField = UITextField()
+        textField.borderStyle = .roundedRect
+        textField.textAlignment = .center
+        textField.backgroundColor = .lightText
+        textField.font = UIFont.boldSystemFont(ofSize: 16)
+        textField.adjustsFontSizeToFitWidth = false
+        textField.placeholder = "Enter Timer Title"
+        textField.delegate = self
+        return textField
+    }()
+    
+    private func titleTextFieldConstraints() {
+        timerTitleTextField.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(timerTitleTextField)
+    
+        NSLayoutConstraint.activate([
+        timerTitleTextField.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+        timerTitleTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 400), timerTitleTextField.widthAnchor.constraint(equalToConstant: 300),
+        timerTitleTextField.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+    
+    private func startButtonConstraints() {
+        startButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(startButton)
+    
+        NSLayoutConstraint.activate([
+        startButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+        startButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 500), startButton.widthAnchor.constraint(equalToConstant: 60),
+        startButton.heightAnchor.constraint(equalToConstant: 60)
+        ])
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        //add DatePicker to the view
         self.view.addSubview(setTimerView)
-        self.view.addSubview(startButton)
+        titleTextFieldConstraints()
+        startButtonConstraints()
 
         // Do any additional setup after loading the view.
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension TimerViewController: UITextViewDelegate, UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text = ""
     }
-    */
-
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.text = ""
+    }
+    
 }
