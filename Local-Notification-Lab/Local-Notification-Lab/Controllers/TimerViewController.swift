@@ -23,11 +23,34 @@ class TimerViewController: UIViewController {
 
     }()
     
+
+    @objc func cancelButtonPressed() {
+        self.setTimerView.datePickerMode = .countDownTimer
+    }
+    
+    @objc func startButtonPressed() {
+        
+        
+    }
+    lazy var startButton : UIButton = {
+        //Create Button
+        let startButton = UIButton()
+        //set Button Properties
+        startButton.frame = CGRect(x: 177, y: 500, width: 60, height: 60)
+        startButton.backgroundColor = #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)
+        startButton.layer.cornerRadius = 15
+        startButton.layer.borderWidth = 2
+        startButton.layer.borderColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        
+        return startButton
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         //add DatePicker to the view
         self.view.addSubview(setTimerView)
+        self.view.addSubview(startButton)
 
         // Do any additional setup after loading the view.
     }
